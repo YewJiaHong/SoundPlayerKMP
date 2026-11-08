@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Sound Board</string>
+
+    <!--Volume-->
+    <string name="save_preset">Save Preset</string>
+    <string name="preset">Preset</string>
+    <string name="custom">Custom</string>
+
+    <!--SoundItem-->
+    <string name="sound_name">Sound Name</string>
+    <string name="volume">Volume</string>
+    <string name="add_new_sound">Add New Sound</string>
+    <string name="enter_sound_name">Enter Sound Name</string>
+    <string name="play_sound">Play Sound</string>
+    <string name="create_sound">Create Sound</string>
+
+    <!--Misc-->
+    <string name="delete">Delete</string>
+</resources>

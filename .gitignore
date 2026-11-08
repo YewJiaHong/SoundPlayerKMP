@@ -1,0 +1,44 @@
+
+# Gradle
+.gradle/
+**/build/
+
+# Kotlin
+.kotlin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Local machine configuration
+local.properties
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.apk
+*.aab
+*.class
+*.log
+
+# Native build outputs
+.cxx/
+.externalNativeBuild/
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+
+# Signing keys and secrets
+*.jks
+*.keystore
+secrets.properties
+.env
+
+# Generated files
+captures/
+out/

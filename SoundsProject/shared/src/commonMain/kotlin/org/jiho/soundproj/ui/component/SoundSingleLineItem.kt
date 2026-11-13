@@ -8,22 +8,19 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.jiho.soundproj.core.model.Sound
 import soundsproject.shared.generated.resources.Res
 import soundsproject.shared.generated.resources.play_sound
 import soundsproject.shared.generated.resources.whiteplaybutton
 
 @Composable
 fun SoundSingleLineItem(
-    text: String,
+    sound: Sound
 ){
     Box(
         modifier = Modifier.fillMaxWidth()
@@ -40,7 +37,7 @@ fun SoundSingleLineItem(
                 .padding(10.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            Text(text,fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic, color = MaterialTheme.colorScheme.onPrimaryContainer, fontSize = 20.sp)
+            GetBoldItalicText(sound.soundName, 20)
             IconButton(
                 onClick = {
                     //todo logic

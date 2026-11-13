@@ -5,20 +5,26 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.*
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Slider
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import soundsproject.shared.generated.resources.*
+import org.jiho.soundproj.core.model.Sound
+import soundsproject.shared.generated.resources.Res
+import soundsproject.shared.generated.resources.delete
+import soundsproject.shared.generated.resources.deletewhite
+import soundsproject.shared.generated.resources.volume
 
 @Composable
-fun SoundItem(){
-    var volume by remember { mutableFloatStateOf(50f) }
+fun SoundItem(
+    sound: Sound
+){
+    var volume by remember { mutableFloatStateOf(sound.volume) }
     val sliderColor = SliderDefaults.colors(
         thumbColor = MaterialTheme.colorScheme.secondary,
         activeTrackColor = MaterialTheme.colorScheme.primary,
@@ -35,7 +41,7 @@ fun SoundItem(){
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            Text(stringResource(Res.string.sound_name), fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic, color = MaterialTheme.colorScheme.onPrimaryContainer, fontSize = 16.sp)
+            GetBoldItalicText(sound.soundName,16)
             IconButton(
                 onClick = {
                     //todo logic
@@ -47,7 +53,7 @@ fun SoundItem(){
             }
         }
 
-        Text(modifier = Modifier.padding(0.dp), text = stringResource(Res.string.volume), fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic, color = MaterialTheme.colorScheme.onPrimaryContainer, fontSize = 12.sp)
+        GetBoldItalicText(stringResource(Res.string.volume),12,modifier = Modifier.padding(0.dp))
         Slider(
             value = volume,
             onValueChange = { volume = it },

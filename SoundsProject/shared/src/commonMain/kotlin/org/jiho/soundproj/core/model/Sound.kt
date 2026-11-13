@@ -4,6 +4,5 @@ data class Sound(
     val soundId: String,
     var volume: Float,
     val soundName: String,
-    val audioPath: String,
-) {     
-}
+    val audioPath: String = "",
+)
